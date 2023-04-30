@@ -10,6 +10,7 @@ import (
 	"runtime/pprof"
 	"strconv"
 
+	lyra2rev2 "github.com/wakiyamap/lyra2rev2"
 	quark "github.com/mycroft/goquarkhash"
 	x11 "gitlab.com/nitya-sattva/go-x11"
 	"golang.org/x/crypto/scrypt"
@@ -27,7 +28,7 @@ var (
 )
 
 func init() {
-	flag.StringVar(&algo, "algo", "sha256", "Algo to use: sha256, scrypt, x11, quark")
+	flag.StringVar(&algo, "algo", "sha256", "Algo to use: sha256, scrypt, x11, quark, lyra2rev2")
 	flag.StringVar(&psz, "psz", "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks", "pszTimestamp")
 	flag.Uint64Var(&coins, "coins", uint64(50*100000000), "Number of coins")
 	flag.StringVar(&pubkey, "pubkey", "04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f", "Pubkey (required)")
@@ -66,6 +67,16 @@ func ComputeX11(content []byte) []byte {
 
 func ComputeQuark(content []byte) []byte {
 	return quark.QuarkHash(content)
+}
+
+func ComputeLyra2rev2(content []byte) []byte {
+	resultHash, err := lyra2rev2.Sum(content)
+
+	if err != nil {
+		panic(err)
+	}
+
+	return resultHash
 }
 
 func Reverse(in []byte) []byte {
@@ -194,6 +205,8 @@ func SearchWorker(jobs <-chan Job, results chan<- bool) {
 			case "quark":
 				hash = quark.QuarkHash(blk.Serialize())
 				blk.Hash = hash
+			case "lyra2rev2":
+				hash = ComputeLyra2rev2(blk.Serialize())
 			}
 
 			current.SetBytes(Reverse(hash))

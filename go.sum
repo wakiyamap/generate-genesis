@@ -1,0 +1,12 @@
+github.com/aead/skein v0.0.0-20160722084837-9365ae6e95d2 h1:q5TSngwXJdajCyZPQR+eKyRRgI3/ZXC/Nq1ZxZ4Zxu8=
+github.com/aead/skein v0.0.0-20160722084837-9365ae6e95d2/go.mod h1:4JBZEId5BaLqvA2DGU53phvwkn2WpeLhNSF79/uKBPs=
+github.com/dchest/blake256 v1.1.0 h1:4AuEhGPT/3TTKFhTfBpZ8hgZE7wJpawcYaEawwsbtqM=
+github.com/dchest/blake256 v1.1.0/go.mod h1:xXNWCE1jsAP8DAjP+rKw2MbeqLczjI3TRx2VK+9OEYY=
+github.com/mycroft/goquarkhash v0.0.0-20180708083435-35950a5747a3 h1:sHiaxaeHRhCFEc2oTjOKhthWlAV6dgNod35/aqSMsMs=
+github.com/mycroft/goquarkhash v0.0.0-20180708083435-35950a5747a3/go.mod h1:iVmOdSa1f4XitqCZmi6Rzr1E14OQsn1vRNXIWekwgAE=
+github.com/wakiyamap/lyra2rev2 v0.1.2 h1:71gcx9YP9t8XJFBx/2jFbM/K0SuUbcQoX/NBSXczeFk=
+github.com/wakiyamap/lyra2rev2 v0.1.2/go.mod h1:G4rxLM39S2icKsHDBtzrUeEKM+7wRNEwhgpRjkYadn8=
+gitlab.com/nitya-sattva/go-x11 v0.0.0-20161218191547-fe7663eb78fd h1:vo96ljS9/ZiG8SWCmgEbAzU/Eol4xM6MEEEbTRS7V/Q=
+gitlab.com/nitya-sattva/go-x11 v0.0.0-20161218191547-fe7663eb78fd/go.mod h1:0Hgc0AzU3aAodvipSCrgE6Y+HYIjdz/VdShJQhmPC94=
+golang.org/x/crypto v0.8.0 h1:pd9TJtTueMTVQXzk8E2XESSMQDj/U7OUu0PqJqPXQjQ=
+golang.org/x/crypto v0.8.0/go.mod h1:mRqEX+O9/h5TFCrQhkgjo2yKi0yYA+9ecGkdQoHrywE=
